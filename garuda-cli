@@ -1,0 +1,54 @@
+#!/usr/bin/python
+import sys
+import json
+import time
+from garuda import *
+from prettytable import PrettyTable
+
+try:
+    if len(sys.argv) == 2 and sys.argv[1] == 's3':
+        start_time = time.time()
+        garuda = garuda()
+        b = garuda.create_session('client')
+        a = garuda.list_bucket(b)
+        s3info, total_count = garuda.count_objects(a[0], a[1])
+        s3info = json.loads(s3info)
+        total_count = json.loads(total_count)
+
+        header = ['Bucket Name', 'Created at', 'Total Objects', 'Size(MB)', 'Updated at', 'Storage Cost(USD)']
+        table = PrettyTable(header)
+        for i in range(len(s3info)):
+            bucket_name = s3info[i]['bucket_name']
+            creation_time = s3info[i]['creation_time']
+            number_of_objects = s3info[i]['number_of_objects']
+            bucket_size_in_mb = s3info[i]['bucket_size_in_mb']
+            last_updated = s3info[i]['last_updated']
+            storage_cost = s3info[i]['storage_cost']
+            row = [bucket_name, creation_time, number_of_objects, bucket_size_in_mb, last_updated, storage_cost]
+            table.add_row(row)
+        print(table)
+
+        header = ['Total Buckets', 'Total Objects', 'Total Size(MB)', 'Total Storage Cost(USD)']
+        table = PrettyTable(header)
+        row = [total_count['total_buckets'], total_count['total_objects'], total_count['total_size_in_mb'], total_count['total_cost_in_usd']]
+        table.add_row(row)
+        print table
+
+        end_time = time.time()
+        time_diff = end_time - start_time
+        print('Executed in ' + str(time_diff) + ' seconds')
+
+
+        #start_time = time.time()
+        #total_objects = garuda.get_total_objects(garuda.create_session(type='resource'))
+        #print(total_objects)
+        #end_time = time.time()
+        #time_diff = end_time - start_time
+        #print('Executed in ' + str(time_diff) + ' seconds')
+
+    else:
+        print('invalid input')
+
+except Exception as e:
+    print('Failed to execute program due to exeception: ' + str(e))
+    exit(1)
