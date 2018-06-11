@@ -17,5 +17,8 @@ Steps to use garuda cli tool:
 * GARUDA_HOME is a path of the repository in your local system
 * `export GARUDA_HOME='/home/rkkrishnaa/garuda'`
 * ``export PATH=$PATH:$GARUDA_HOME``
+* `cd $GARUDA_HOME`
+* `chmod +x garuda-cli`
+* Edit aws credentials in garuda.cfg file
 * `garuda-cli s3`
 ![garuda](garuda-cli-s3.png?raw=true)
