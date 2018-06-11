@@ -19,6 +19,8 @@ Steps to use garuda cli tool:
 * ``export PATH=$PATH:$GARUDA_HOME``
 * `cd $GARUDA_HOME`
 * `chmod +x garuda-cli`
+* Ensure boto3 and prettytable library is installed in your system otherwise install it via pip. Please ignore the step if  these packages are already installed
+`pip install -r requirements.txt`
 * Edit aws credentials in garuda.cfg file
 * `garuda-cli s3`
 ![garuda](garuda-cli-s3.png?raw=true)
