@@ -47,7 +47,8 @@ try:
         #print('Executed in ' + str(time_diff) + ' seconds')
 
     else:
-        print('invalid input')
+        print('Invalid input!')
+        print('Enter garuda-cli s3')
 
 except Exception as e:
     print('Failed to execute program due to exeception: ' + str(e))
