@@ -48,7 +48,7 @@ try:
 
     else:
         print('Invalid input!')
-        print('Enter garuda-cli s3')
+        print('Usage: garuda-cli s3')
 
 except Exception as e:
     print('Failed to execute program due to exeception: ' + str(e))
