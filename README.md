@@ -31,6 +31,8 @@ Garuda-app:
 ![garuda](garuda-app.png?raw=true)
 
 The ultimate goal of the application is to monitor the hosts in the cluster without any manual configuration. I am writing agent application in such a way that it should not poll the server continuosly like other monitoring tools. It is a light weight agent it uses amqp and http rest calls for commnications and data exchanging. Users can create their own dashboard with custom metrics. Moreover it will give you an insight to your aws account. I will share the api in the form of swagger schema for portability. 
+
+
 ![garuda](arch.png?raw=true)
 
 Please share your feedback to improve the functionality of this application.
