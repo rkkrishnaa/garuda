@@ -1,0 +1,271 @@
+{
+	"variables": [],
+	"info": {
+		"name": "garuda-app",
+		"_postman_id": "b466b684-54ca-4d4a-8b75-8276a05660ed",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"url": "http://localhost:5000/user/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"username\" : \"rkkrishnaa\",\n\"email\"  : \"radhakrishnancloud@gmail.com\",\n\"password\" : \"rkkrishnaa\",\n\"description\" : \"rkkrishnaa user\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create project",
+			"request": {
+				"url": "http://localhost:5000/project/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userid\" : \"f22d570090b811e890c4ac728925ac00\",\n\"projectname\" : \"rktestproject\",\n\"description\" : \"rktest project\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create host",
+			"request": {
+				"url": "http://localhost:5000/host/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userid\" : \"f22d570090b811e890c4ac728925ac00\",\n\"hostname\"  : \"localhost\",\n\"projectid\" : \"1d20410f90ba11e8b97aac728925ac00\",\n\"description\" : \"rkkrishnaa host\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"url": "http://localhost:5000/user/f22d570090b811e890c4ac728925ac00/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"username\" : \"rkkrishnaa\",\n\"email\"  : \"radhakrishnancloud@gmail.com\",\n\"password\" : \"rkkrishnaa\",\n\"description\" : \"rkkrishnaa user\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete project",
+			"request": {
+				"url": "http://localhost:5000/project/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"username\" : \"rkkrishnaa\",\n\"email\"  : \"radhakrishnancloud@gmail.com\",\n\"password\" : \"rkkrishnaa\",\n\"description\" : \"rkkrishnaa user\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete host",
+			"request": {
+				"url": "http://localhost:5000/host/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"username\" : \"rkkrishnaa\",\n\"email\"  : \"radhakrishnancloud@gmail.com\",\n\"password\" : \"rkkrishnaa\",\n\"description\" : \"rkkrishnaa user\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list user",
+			"request": {
+				"url": "http://localhost:5000/user/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userid\": \"5144c3618f4011e8ae34ac728925ac00\",\n\"projectid\": \"f56ff26e8f4511e8a0c1ac728925ac00\",\n\"hostname\" : \"127.0.0.3\",\n\"description\" : \"test project2\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list project",
+			"request": {
+				"url": "http://localhost:5000/user/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userid\": \"5144c3618f4011e8ae34ac728925ac00\",\n\"projectid\": \"f56ff26e8f4511e8a0c1ac728925ac00\",\n\"hostname\" : \"127.0.0.3\",\n\"description\" : \"test project2\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list host",
+			"request": {
+				"url": "http://localhost:5000/user/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userid\": \"5144c3618f4011e8ae34ac728925ac00\",\n\"projectid\": \"f56ff26e8f4511e8a0c1ac728925ac00\",\n\"hostname\" : \"127.0.0.3\",\n\"description\" : \"test project2\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "show user",
+			"request": {
+				"url": "http://localhost:5000/user/f22d570090b811e890c4ac728925ac00/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userid\": \"5144c3618f4011e8ae34ac728925ac00\",\n\"projectid\": \"f56ff26e8f4511e8a0c1ac728925ac00\",\n\"hostname\" : \"127.0.0.3\",\n\"description\" : \"test project2\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "show project",
+			"request": {
+				"url": "http://localhost:5000/project/1d20410f90ba11e8b97aac728925ac00/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userid\": \"5144c3618f4011e8ae34ac728925ac00\",\n\"projectid\": \"f56ff26e8f4511e8a0c1ac728925ac00\",\n\"hostname\" : \"127.0.0.3\",\n\"description\" : \"test project2\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "show host",
+			"request": {
+				"url": "http://localhost:5000/host/6a63c3c090ba11e89d9eac728925ac00/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userid\": \"5144c3618f4011e8ae34ac728925ac00\",\n\"projectid\": \"f56ff26e8f4511e8a0c1ac728925ac00\",\n\"hostname\" : \"127.0.0.3\",\n\"description\" : \"test project2\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "elasticsearch",
+			"request": {
+				"url": "http://54.226.252.121:50002/filebeat-2018.07.25/_search",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"rkkrishnaa1\",\n\t\"age\" : 25,\n\t\"job role\" : \"solutions architect\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
